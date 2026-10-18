@@ -25,6 +25,7 @@ import type { PointerEvent } from "react";
 const DATA = {
   profile: {
     name: "Sharan G",
+    location: "Hyderabad, India",
     role: "Computer Science & Engineering Student",
     bio: "I’m a Computer Science and Engineering student building projects across software, databases, and machine learning, with a growing interest in financial systems and practical product development.",
   },
@@ -93,7 +94,7 @@ function FadeIn({
   const reduceMotion = useReducedMotion();
   return (
     <motion.div
-      initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{
@@ -453,7 +454,7 @@ export default function Portfolio() {
             </div>
           </FadeIn>
           <div className="hero-bottom">
-            <span>SOFTWARE / SYSTEMS / AI</span>
+            <span>{DATA.profile.location.toUpperCase()}</span>
             <a href="#work">
               SCROLL TO EXPLORE
               <ArrowDown size={13} />
