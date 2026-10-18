@@ -110,22 +110,17 @@ function FadeIn({
 function CursorSpotlight() {
   const x = useMotionValue(-1000);
   const y = useMotionValue(-1000);
-  const reduceMotion = useReducedMotion();
   const background = useMotionTemplate`radial-gradient(600px circle at ${x}px ${y}px, rgba(255,255,255,0.07), transparent 45%)`;
 
   useEffect(() => {
-    if (
-      reduceMotion ||
-      !window.matchMedia("(hover: hover) and (pointer: fine)").matches
-    )
-      return;
     const followPointer = (event: globalThis.PointerEvent) => {
+      if (event.pointerType === "touch") return;
       x.set(event.clientX);
       y.set(event.clientY);
     };
     window.addEventListener("pointermove", followPointer, { passive: true });
     return () => window.removeEventListener("pointermove", followPointer);
-  }, [reduceMotion, x, y]);
+  }, [x, y]);
 
   return (
     <motion.div
