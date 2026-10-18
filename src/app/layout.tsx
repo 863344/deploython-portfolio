@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio",
-  description: "Apple-inspired Developer Portfolio",
+  title: "Sharan G | Computer Science & Engineering Student",
+  description: "Sharan G’s student portfolio: projects in software, databases, machine learning, and financial systems, alongside B.Tech studies at KL University.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

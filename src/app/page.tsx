@@ -6,22 +6,40 @@ import { useEffect, useState } from "react";
 
 const DATA = {
   profile: {
-    name: "Sharan",
-    role: "Full-Stack Developer",
-    bio: "I build resilient, scalable systems and intuitive interfaces, focusing on performance and seamless digital experiences.",
+    name: "Sharan G",
+    role: "Computer Science & Engineering Student",
+    bio: "I’m a Computer Science and Engineering student building projects across software, databases, and machine learning, with a growing interest in financial systems and practical product development.",
   },
-  skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+  skills: ["C", "Python", "Java", "SQL", "JavaScript", "React", "PostgreSQL", "MongoDB", "Linux", "Git & GitHub"],
   projects: [
-    { title: "Alpha Build", tech: "Next.js • Tailwind", desc: "High-performance marketing engine." },
-    { title: "Omega Protocol", tech: "React • Node.js", desc: "Real-time data visualization dashboard." },
+    {
+      title: "Neuro-Financial FusionNet",
+      tech: "Python • PyTorch • FinBERT",
+      desc: "Undergraduate research at KL University exploring financial volatility forecasting with a temporal Transformer, graph attention network, and news embeddings. Work includes data extraction, aligned datasets, and model comparisons.",
+    },
+    {
+      title: "Shellforge",
+      tech: "C • POSIX • Linux",
+      desc: "A modular shell exploring process execution with fork, execvp, and wait. Supports pipes, redirection, quoting, background jobs, signals, environment variables, and persistent command history.",
+    },
+    {
+      title: "Cold Chain Fleet Engine",
+      tech: "React • FastAPI • PostgreSQL • MongoDB",
+      desc: "A college DBMS project for temperature-sensitive deliveries, with admin, driver, and customer workspaces. Combines stock reservation and dispatch transactions with sensor history, shipment holds, and incident records.",
+    },
+    {
+      title: "Smart Search Engine",
+      tech: "Java • Data Structures • BM25",
+      desc: "A team-built document search system with a local browser interface. Uses positional indexes for phrase and Boolean queries, BM25 ranking, Trie autocomplete, and BK-Tree spelling suggestions, with views into the underlying data structures.",
+    },
   ],
   education: [
-    { degree: "B.S. Computer Science", institution: "University Name", year: "2025" }
+    { degree: "B.Tech in Computer Science & Engineering", institution: "KL University", year: "2026–2029 · Expected graduation 2029" }
   ],
   links: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    email: "sharan@example.com"
+    github: "https://github.com/863344",
+    email: "sharangunamoni@gmail.com",
+    linkedin: "https://www.linkedin.com/in/sharan-g-213888431/",
   }
 };
 
@@ -80,10 +98,10 @@ export default function Portfolio() {
           </FadeIn>
           <FadeIn delay={0.3}>
             <div className="flex gap-4 pt-6">
-              <a href={DATA.links.github} className="p-4 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 text-zinc-400 backdrop-blur-md hover:scale-105 hover:-rotate-2">
+              <a href={DATA.links.github} aria-label="Sharan G on GitHub" className="p-4 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 text-zinc-400 backdrop-blur-md hover:scale-105 hover:-rotate-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
               </a>
-              <a href={DATA.links.linkedin} className="p-4 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 text-zinc-400 backdrop-blur-md hover:scale-105 hover:rotate-2">
+              <a href={DATA.links.linkedin} aria-label="Sharan G on LinkedIn" className="p-4 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 text-zinc-400 backdrop-blur-md hover:scale-105 hover:rotate-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
               </a>
             </div>
@@ -93,7 +111,7 @@ export default function Portfolio() {
         {/* Skills */}
         <section>
           <FadeIn>
-            <h2 className="text-sm uppercase tracking-widest text-zinc-500 font-semibold mb-8">Technical Arsenal</h2>
+            <h2 className="text-sm uppercase tracking-widest text-zinc-500 font-semibold mb-8">Skills Used in Projects</h2>
             <div className="flex flex-wrap gap-3">
               {DATA.skills.map((skill) => (
                 <span key={skill} className="px-5 py-2.5 bg-zinc-900/40 border border-zinc-800/50 backdrop-blur-md rounded-xl text-sm font-medium text-zinc-300 hover:bg-zinc-800 hover:border-zinc-700 transition-colors cursor-default">
@@ -141,11 +159,11 @@ export default function Portfolio() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h2 className="text-sm uppercase tracking-widest text-zinc-500 font-semibold mb-8">Contact</h2>
-            <p className="text-zinc-400 mb-8">Ready to engineer the next standard?</p>
+            <p className="text-zinc-400 mb-8">Exploring internships and opportunities in software, financial systems, and AI applications.</p>
             <a href={`mailto:${DATA.links.email}`} className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-2xl overflow-hidden">
               <div className="absolute inset-0 w-full h-full bg-zinc-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <Mail size={20} className="relative z-10" /> 
-              <span className="relative z-10">Initiate Contact</span>
+              <Mail size={20} className="relative z-10" />
+              <span className="relative z-10">Email Me</span>
             </a>
           </FadeIn>
         </section>
