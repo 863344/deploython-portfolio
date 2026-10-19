@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,6 +22,7 @@ export default function RootLayout({
         className={`${inter.className} bg-black text-zinc-50 antialiased selection:bg-white selection:text-black`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
